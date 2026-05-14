@@ -14,7 +14,7 @@ import { ScrollService } from '../../services/scroll.service';
           <!-- Brand -->
           <div class="flex items-center">
             <img
-              ngSrc="/assets/images/logo.png"
+              ngSrc="assets/images/logo.png"
               width="110"
               height="80"
               alt="Kalli's Trinkets & More"

@@ -24,7 +24,7 @@ export class GalleryComponent {
       name: 'Tumbler Engravings',
       description:
         'Beautifully laser-engraved custom tumblers — perfect for names, monograms, meaningful quotes, or custom artwork. Available in multiple sizes and colors.',
-      imageSrc: '/assets/images/tumblers.png',
+      imageSrc: 'assets/images/tumblers.png',
       imageAlt: 'Custom engraved tumbler with personalized design',
       badge: 'Most Popular',
     },
@@ -32,7 +32,7 @@ export class GalleryComponent {
       name: '3D Printed Figurines',
       description:
         'Adorable custom 3D-printed figurines — from cat companions to personalized keepsakes. A one-of-a-kind gift that captures something truly special.',
-      imageSrc: '/assets/images/cat-figurine.png',
+      imageSrc: 'assets/images/cat-figurine.png',
       imageAlt: '3D printed custom cat figurine',
       badge: 'Fan Favorite',
     },
