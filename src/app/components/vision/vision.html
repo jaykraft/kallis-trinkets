@@ -1,0 +1,37 @@
+<section id="vision" class="py-20 lg:py-28 bg-cream-dark px-4" aria-labelledby="vision-heading">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="inline-block text-terracotta font-bold text-xs tracking-widest uppercase mb-4">Our Vision</span>
+      <h2 id="vision-heading" class="font-serif text-4xl lg:text-5xl font-bold text-brown leading-tight mb-6">
+        Why we do
+        <br>
+        <em class="font-medium not-italic" style="color: #A67355;">what we do</em>
+      </h2>
+      <p class="text-brown-light text-lg leading-relaxed">
+        We believe the most meaningful gifts aren't bought off a shelf — they're created with intention, personalized with care, and given with love.
+      </p>
+    </div>
+
+    <!-- Value cards -->
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+      @for (value of values; track value.title) {
+        <article class="bg-cream rounded-2xl p-8 border border-sand shadow-sm hover:shadow-md transition-shadow">
+          <div
+            class="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
+            style="background: #C8956C1A;"
+            aria-hidden="true"
+          >
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true" style="color: #A67355;">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" [attr.d]="value.iconPath" />
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-brown mb-3">{{ value.title }}</h3>
+          <p class="text-brown-light text-sm leading-relaxed">{{ value.description }}</p>
+        </article>
+      }
+    </div>
+
+  </div>
+</section>

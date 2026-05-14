@@ -1,0 +1,57 @@
+<section id="gallery" class="py-20 lg:py-28 bg-cream px-4" aria-labelledby="gallery-heading">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="inline-block text-terracotta font-bold text-xs tracking-widest uppercase mb-4">Our Work</span>
+      <h2 id="gallery-heading" class="font-serif text-4xl lg:text-5xl font-bold text-brown leading-tight mb-6">
+        What we
+        <br>
+        <em class="font-medium not-italic" style="color: #A67355;">create for you</em>
+      </h2>
+      <p class="text-brown-light text-lg leading-relaxed">
+        Each product is a canvas for your story. Here's a look at what we love to make.
+      </p>
+    </div>
+
+    <!-- Product cards -->
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+      @for (product of products; track product.name) {
+        <article class="group bg-cream-dark rounded-3xl overflow-hidden border border-sand shadow-sm hover:shadow-lg transition-shadow">
+
+          <!-- Image -->
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img
+              [ngSrc]="product.imageSrc"
+              fill
+              [alt]="product.imageAlt"
+              class="object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <span class="absolute top-4 left-4 bg-brown text-cream text-xs font-bold px-3 py-1 rounded-full shadow">
+              {{ product.badge }}
+            </span>
+          </div>
+
+          <!-- Content -->
+          <div class="p-8">
+            <h3 class="font-serif text-2xl font-bold text-brown mb-3">{{ product.name }}</h3>
+            <p class="text-brown-light text-sm leading-relaxed mb-6">{{ product.description }}</p>
+            <a
+              href="#inquiry"
+              (click)="orderProduct($event)"
+              class="inline-flex items-center gap-2 font-bold text-sm transition-all duration-200"
+              style="color: #A67355;"
+              [attr.aria-label]="'Order ' + product.name"
+            >
+              Order this
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      }
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,53 @@
+<section id="our-story" class="py-20 lg:py-28 bg-cream px-4" aria-labelledby="our-story-heading">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+      <!-- Text side -->
+      <div>
+        <span class="inline-block text-terracotta font-bold text-xs tracking-widest uppercase mb-4">Our Story</span>
+        <h2 id="our-story-heading" class="font-serif text-4xl lg:text-5xl font-bold text-brown leading-tight mb-6">
+          Made from the heart
+          <br>
+          <em class="font-medium not-italic" style="color: #A67355;">of a family</em>
+        </h2>
+
+        <div class="space-y-4 text-brown-light text-base leading-relaxed">
+          <p>
+            What started as a kitchen-table hobby has grown into something truly special. Kalli's Trinkets &amp; More was born from a deep love of crafting and a desire to bring heartfelt, personalized joy to people's lives.
+          </p>
+          <p>
+            We're a small family business, and that means everything to us. Every tumbler we engrave and every figurine we print carries a piece of our heart. We believe the best gifts are the ones that tell a story — <em>yours</em>.
+          </p>
+          <p>
+            Whether you're celebrating a milestone, honoring someone special, or just showing someone you care, we're here to help you create something they'll treasure forever.
+          </p>
+        </div>
+
+        <!-- Stats -->
+        <div class="mt-10 grid grid-cols-3 gap-3">
+          @for (stat of stats; track stat.label) {
+            <div class="text-center p-4 bg-cream-dark rounded-2xl border border-sand">
+              <div class="font-serif text-xl font-bold text-terracotta-dark">{{ stat.value }}</div>
+              <div class="text-brown-light text-xs font-semibold mt-1 leading-snug">{{ stat.label }}</div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Image side -->
+      <div class="relative">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-xl border border-sand">
+          <img
+            ngSrc="/assets/images/tumblers.png"
+            fill
+            alt="Handcrafted custom tumblers with beautiful engravings"
+            class="object-cover"
+          />
+        </div>
+        <!-- Decorative accents -->
+        <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-sand rounded-2xl -z-10 border border-terracotta/20" aria-hidden="true"></div>
+        <div class="absolute -top-4 -right-4 w-16 h-16 bg-cream-dark rounded-2xl border border-sand -z-10" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>

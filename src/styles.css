@@ -1,3 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Nunito', system-ui, sans-serif;
+  --font-serif: 'Lora', Georgia, serif;
+
+  --color-cream: #FAF6F1;
+  --color-cream-dark: #F2E8DC;
+  --color-sand: #E8D5C0;
+  --color-terracotta: #C8956C;
+  --color-terracotta-dark: #A67355;
+  --color-brown: #3D2B1F;
+  --color-brown-light: #7A5C4A;
+  --color-success: #3D6B4A;
+  --color-error: #C0392B;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-brown);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: var(--color-brown);
+  color: var(--color-cream);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  z-index: 9999;
+  border-radius: 0 0 0.5rem 0;
+}
+
+.skip-link:focus {
+  top: 0;
+}

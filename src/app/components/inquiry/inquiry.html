@@ -1,0 +1,172 @@
+<section id="inquiry" class="py-20 lg:py-28 bg-cream-dark px-4" aria-labelledby="inquiry-heading">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+      <!-- Info side -->
+      <div class="lg:pt-4">
+        <span class="inline-block text-terracotta font-bold text-xs tracking-widest uppercase mb-4">Place an Order</span>
+        <h2 id="inquiry-heading" class="font-serif text-4xl lg:text-5xl font-bold text-brown leading-tight mb-6">
+          Let's create
+          <br>
+          <em class="font-medium not-italic" style="color: #A67355;">something special</em>
+        </h2>
+        <p class="text-brown-light text-base leading-relaxed mb-8">
+          Ready to make a gift they'll never forget? Fill out the form and we'll get back to you within 24 hours to discuss your order, timeline, and pricing.
+        </p>
+
+        <div class="space-y-5">
+          @for (item of [
+            { icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', text: 'We respond within 24 hours' },
+            { icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z', text: 'Every piece is 100% custom' },
+            { icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z', text: 'Made with love, guaranteed' }
+          ]; track item.text) {
+            <div class="flex items-center gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center border border-sand bg-cream" aria-hidden="true">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true" style="color: #A67355;">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" [attr.d]="item.icon"/>
+                </svg>
+              </div>
+              <span class="text-brown-light text-sm font-medium">{{ item.text }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Form side -->
+      <div class="bg-cream rounded-3xl border border-sand shadow-sm p-8 lg:p-10">
+
+        <!-- Success state -->
+        @if (submitState() === 'success') {
+          <div class="text-center py-8" aria-live="polite" role="status">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background: #3D6B4A1A;">
+              <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke-width="2" style="color: #3D6B4A;">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-brown mb-3">We'll be in touch!</h3>
+            <p class="text-brown-light text-sm leading-relaxed mb-8">
+              Thank you for reaching out. We've received your message and will get back to you within 24 hours to discuss your custom order.
+            </p>
+            <button
+              type="button"
+              (click)="resetForm()"
+              class="bg-brown text-cream px-6 py-3 rounded-full font-bold text-sm hover:bg-brown-light transition-colors"
+            >
+              Send Another Message
+            </button>
+          </div>
+        } @else {
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+            <h3 class="font-serif text-xl font-bold text-brown mb-6">Tell us about your order</h3>
+
+            <!-- Name -->
+            <div class="mb-5">
+              <label for="inq-name" class="block text-brown text-sm font-semibold mb-1.5">
+                Your Name <span class="text-error" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="inq-name"
+                type="text"
+                formControlName="name"
+                autocomplete="name"
+                required
+                [attr.aria-invalid]="isInvalid(nameControl)"
+                aria-describedby="inq-name-error"
+                class="w-full px-4 py-3 rounded-xl border bg-cream text-brown text-sm font-medium placeholder-brown-light/60 transition-colors outline-none focus:ring-2"
+                [class]="isInvalid(nameControl) ? 'border-error focus:ring-error/30' : 'border-sand focus:border-terracotta focus:ring-terracotta/20'"
+                placeholder="Kalli Smith"
+              />
+              @if (isInvalid(nameControl)) {
+                <p id="inq-name-error" class="mt-1.5 text-xs font-medium" style="color: #C0392B;" aria-live="polite">
+                  Please enter your full name.
+                </p>
+              }
+            </div>
+
+            <!-- Email -->
+            <div class="mb-5">
+              <label for="inq-email" class="block text-brown text-sm font-semibold mb-1.5">
+                Email Address <span class="text-error" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="inq-email"
+                type="email"
+                formControlName="email"
+                autocomplete="email"
+                required
+                [attr.aria-invalid]="isInvalid(emailControl)"
+                aria-describedby="inq-email-error"
+                class="w-full px-4 py-3 rounded-xl border bg-cream text-brown text-sm font-medium placeholder-brown-light/60 transition-colors outline-none focus:ring-2"
+                [class]="isInvalid(emailControl) ? 'border-error focus:ring-error/30' : 'border-sand focus:border-terracotta focus:ring-terracotta/20'"
+                placeholder="you@example.com"
+              />
+              @if (isInvalid(emailControl)) {
+                <p id="inq-email-error" class="mt-1.5 text-xs font-medium" style="color: #C0392B;" aria-live="polite">
+                  Please enter a valid email address.
+                </p>
+              }
+            </div>
+
+            <!-- Product Type -->
+            <div class="mb-5">
+              <label for="inq-product" class="block text-brown text-sm font-semibold mb-1.5">
+                What are you interested in? <span class="text-error" aria-hidden="true">*</span>
+              </label>
+              <select
+                id="inq-product"
+                formControlName="productType"
+                required
+                [attr.aria-invalid]="isInvalid(productTypeControl)"
+                aria-describedby="inq-product-error"
+                class="w-full px-4 py-3 rounded-xl border bg-cream text-brown text-sm font-medium transition-colors outline-none focus:ring-2 appearance-none cursor-pointer"
+                [class]="isInvalid(productTypeControl) ? 'border-error focus:ring-error/30' : 'border-sand focus:border-terracotta focus:ring-terracotta/20'"
+              >
+                <option value="" disabled>Select an option…</option>
+                @for (type of productTypes; track type.value) {
+                  <option [value]="type.value">{{ type.label }}</option>
+                }
+              </select>
+              @if (isInvalid(productTypeControl)) {
+                <p id="inq-product-error" class="mt-1.5 text-xs font-medium" style="color: #C0392B;" aria-live="polite">
+                  Please select what you're interested in.
+                </p>
+              }
+            </div>
+
+            <!-- Message -->
+            <div class="mb-7">
+              <label for="inq-message" class="block text-brown text-sm font-semibold mb-1.5">
+                Tell us more <span class="text-brown-light font-normal text-xs">(optional)</span>
+              </label>
+              <textarea
+                id="inq-message"
+                formControlName="message"
+                rows="4"
+                class="w-full px-4 py-3 rounded-xl border border-sand bg-cream text-brown text-sm font-medium placeholder-brown-light/60 transition-colors outline-none focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 resize-none"
+                placeholder="Tell us your name, a special date, a quote, or any custom details you have in mind…"
+              ></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              [disabled]="submitState() === 'submitting'"
+              class="w-full bg-brown text-cream py-4 rounded-full font-bold text-base hover:bg-brown-light transition-colors shadow-sm disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              @if (submitState() === 'submitting') {
+                Sending…
+              } @else {
+                Send My Request
+              }
+            </button>
+
+            <p class="text-center text-xs text-brown-light mt-4">
+              <span aria-hidden="true">*</span> Required fields. We'll never share your info.
+            </p>
+          </form>
+        }
+      </div>
+
+    </div>
+  </div>
+</section>

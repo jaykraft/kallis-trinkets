@@ -1,0 +1,21 @@
+<svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="500" fill="#E8D5C0"/>
+  <ellipse cx="200" cy="350" rx="75" ry="95" fill="#C8956C"/>
+  <circle cx="200" cy="200" r="68" fill="#C8956C"/>
+  <polygon points="145,148 128,98 172,132" fill="#A67355"/>
+  <polygon points="255,148 272,98 228,132" fill="#A67355"/>
+  <polygon points="148,152 134,108 168,138" fill="#D4A87C"/>
+  <polygon points="252,152 266,108 232,138" fill="#D4A87C"/>
+  <ellipse cx="180" cy="195" rx="11" ry="13" fill="#3D2B1F"/>
+  <ellipse cx="220" cy="195" rx="11" ry="13" fill="#3D2B1F"/>
+  <circle cx="183" cy="191" r="3" fill="white"/>
+  <circle cx="223" cy="191" r="3" fill="white"/>
+  <ellipse cx="200" cy="218" rx="5" ry="4" fill="#E8A090"/>
+  <line x1="158" y1="218" x2="192" y2="222" stroke="#3D2B1F" stroke-width="1.5"/>
+  <line x1="158" y1="228" x2="192" y2="226" stroke="#3D2B1F" stroke-width="1.5"/>
+  <line x1="208" y1="222" x2="242" y2="218" stroke="#3D2B1F" stroke-width="1.5"/>
+  <line x1="208" y1="226" x2="242" y2="228" stroke="#3D2B1F" stroke-width="1.5"/>
+  <path d="M275 400 Q360 290 315 195" stroke="#A67355" stroke-width="15" fill="none" stroke-linecap="round"/>
+  <ellipse cx="200" cy="445" rx="65" ry="10" fill="#A67355" opacity="0.25"/>
+  <text x="200" y="485" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#7A5C4A">Replace with your photo</text>
+</svg>
