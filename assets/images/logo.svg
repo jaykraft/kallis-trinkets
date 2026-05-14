@@ -1,0 +1,8 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="60" cy="60" r="60" fill="#F2E8DC"/>
+  <circle cx="60" cy="60" r="55" fill="none" stroke="#C8956C" stroke-width="2"/>
+  <ellipse cx="52" cy="36" rx="7" ry="13" fill="#C8956C" transform="rotate(-25 52 36)"/>
+  <ellipse cx="68" cy="36" rx="7" ry="13" fill="#A67355" transform="rotate(25 68 36)"/>
+  <ellipse cx="60" cy="32" rx="4" ry="8" fill="#C8956C"/>
+  <text x="60" y="82" font-family="Georgia, serif" font-size="44" font-weight="bold" text-anchor="middle" fill="#3D2B1F">K</text>
+</svg>
